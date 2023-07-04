@@ -1,0 +1,53 @@
+Public class PerfectBinaryTree {
+
+private static int deepest Level (TreeNode root) {
+int deepLevel = 0;
+while(root != null) {
+deepLevel++;
+root root. left;
+}
+return deepLevel;
+}
+public static boolean isPerfectHelper (TreeNode root, int current Level, int deepest Level) {
+if(root.left == null && root.right == null) {
+if (current Level == deepest Level) {
+return true;blic class PerfectBinaryTree {
+private static int deepest Level (TreeNode root) {
+int deepLevel = 0;
+while(root != null) {
+deepLevel++;
+root root. left;
+}
+return deepLevel;
+}
+public static boolean isPerfectHelper (TreeNode root, int current Level, int deepest Level) {
+if(root.left == null && root.right == null) {
+if (current Level == deepest Level) {
+return true;
+}
+return false;
+}
+if(root. left != null && root.right != null) {
+boolean isLeftPerfectBinaryTree = isPerfectHelper (root. left, current Level: current Level + 1, deepest Level);
+boolean isRightPerfectBinary = isPerfectHelper (root.right, current Level: current Level + 1, deepest Level);
+return isLeftPerfectBinaryTree && isRightPerfectBinary;
+}
+return false;
+}
+public static boolean isPerfectBinaryTree (TreeNode root) {
+int deepest Level = deepest Level (root);
+return isPerfectHelper (root, currentLevel: 1, deepest Level);
+}
+
+public static void main(String[] args) {
+TreeNode root = new TreeNode( data: 1);
+root.left= new TreeNode( data: 2);
+root.right = new TreeNode( data: 3);
+root.left. left = new TreeNode ( data: 4);
+root.left.right = new TreeNode(data: 5);
+root.right.left= new TreeNode(data: 6);
+root.right.left = new TreeNode(data: 7);
+
+System.out.println(isPerfectBinaryTree (root);
+}
+}
